@@ -3,46 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Forms</title>
+    <link rel="stylesheet" href="css/forms.css">
 </head>
 <body>
-    <h1>Register With Us</h1>
+<main class="main-container">
     <div class="register">
-        <form method="POST" action="#">
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="johnsmith@example.com">
+        <h1>Register With Us</h1>
+            <form method="POST" action="https://request-inspector.glitch.me/">
+                <label class="email" for="email">Email:</label><br>
+                <input type="email" id="email" placeholder="johnsmith@example.com">
 
-            <label for="password">Password:</label>
-            <input type="password" id="password">
+                <label class="password" for="password">Password:</label>
+                <input type="password" id="password"><br>
 
-            <label for="bio">Tell us a little about yourself</label>
-            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
-             
-            <p>How did you hear about us?</p>
-            <label for="billboard">
-                Billboard <input id="billboard" type="checkbox" name="advert" value="billboard">
-            </label>
-            <label for="internet">
-                Internet <input id="internet" type="checkbox" name="advert" value="internet">
-            </label>
-            <label for="radio">
-                Radio <input id="radio" type="checkbox" name="advert" value="radio">
-            </label>
-            <label for="other">
-                Other <input id="other" type="checkbox" name="advert" value="other">
-            </label>
+                <label for="bio">Tell us a little about yourself:</label>
+                <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
 
-            
-            <label for="browser">What web browser are you using?</label>
-            <select name="browser" id="browser">
-                <option value="chrome">Chrome</option>
-                <option value="safari">Safari</option>
-                <option value="firefox">Firefox</option>
-                <option value="explorer">Explorer</option>
-            </select>
+                <div class="advert">
+                    <p>How did you hear about us?</p>
+                    <label for="billboard">
+                        <input id="billboard" type="radio" name="advert" value="billboard"> Billboard
+                    </label>
+                    <label for="internet">
+                         <input id="internet" type="radio" name="advert" value="internet"> Internet
+                    </label>
+                    <label for="radio">
+                         <input id="radio" type="radio" name="advert" value="radio"> Radio
+                    </label>
+                    <label for="other">
+                        <input id="other" type="radio" name="advert" value="other"> Other
+                    </label>
+                </div>
 
-            
-        </form>
+                <div class="browser-question">
+                    <label for="browser"> What web browser are you using?
+                    <select name="browser" id="browser">
+                        <option value="chrome">Chrome</option>
+                        <option value="safari">Safari</option>
+                        <option value="firefox">Firefox</option>
+                        <option value="explorer">Explorer</option>
+                    </select>
+                    </label>
+                </div>
+
+                <input type="checkbox" name="terms"> <a href="#">Terms & Conditions</a>
+
+                <button class="submit-button" type="submit">Submit</button>
+
+
+            </form>
     </div>
+</main>
 </body>
 </html>
