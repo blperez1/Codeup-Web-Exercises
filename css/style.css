@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+body {
+    background: #cbffcd;
+    font-family: "Roboto", sans-serif;
+}
+header {
+    height: 10em;
+    background-image: url(../img/raindrops.webp);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+}
 .fancy-header {
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+li {
+    list-style: decimal;
+}
+thead {
+    background: black;
+}
+
+tr, td {
+    padding: 20px;
+}
+
+a {
+ color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+a:visited {
     color: purple;
 }
