@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,50 +9,62 @@
 <body>
 <main class="main-container">
     <div class="register">
-        <h1>Register With Us</h1>
-            <form method="POST" action="https://request-inspector.glitch.me/">
-                <label class="email" for="email">Email:</label><br>
-                <input type="email" id="email" placeholder="johnsmith@example.com">
+        <h2 class="form-header">Register With Us</h2>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <div>
+                <label for="email">Email:</label><br>
+                <input class="input-forms" type="email" id="email" placeholder="johnsmith@example.com">
+            </div>
 
-                <label class="password" for="password">Password:</label>
-                <input type="password" id="password"><br>
+            <div>
+                <label for="password">Password:</label>
+                <input class="input-forms" type="password" id="password"><br>
+            </div>
 
+            <div>
                 <label for="bio">Tell us a little about yourself:</label>
-                <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+                <textarea class="input-forms" name="bio" id="bio" cols="30" rows="10"></textarea>
+            </div>
 
-                <div class="advert">
-                    <p>How did you hear about us?</p>
-                    <label for="billboard">
-                        <input id="billboard" type="radio" name="advert" value="billboard"> Billboard
-                    </label>
-                    <label for="internet">
-                         <input id="internet" type="radio" name="advert" value="internet"> Internet
-                    </label>
-                    <label for="radio">
-                         <input id="radio" type="radio" name="advert" value="radio"> Radio
-                    </label>
-                    <label for="other">
-                        <input id="other" type="radio" name="advert" value="other"> Other
-                    </label>
-                </div>
+            <div class="referred">
+                <p>How did you hear about us?</p>
 
-                <div class="browser-question">
-                    <label for="browser"> What web browser are you using?
+                <div>
+                <input id="billboard" type="radio" name="advert" value="billboard"> 
+                <label for="billboard">Billboard</label>
+               </div>
+               <div>
+                <input id="internet" type="radio" name="advert" value="internet">
+                <label for="internet">Internet</label>
+               </div>
+               <div>
+                <input id="radio" type="radio" name="advert" value="radio">
+                <label for="radio">Radio</label>
+            </div>
+            <div>
+                <input id="other" type="radio" name="advert" value="other">
+                <label for="other">Other</label>
+            </div>
+            </div>
+
+            <div>
+                <label for="browser"> What web browser are you using?
                     <select name="browser" id="browser">
                         <option value="chrome">Chrome</option>
                         <option value="safari">Safari</option>
                         <option value="firefox">Firefox</option>
                         <option value="explorer">Explorer</option>
                     </select>
-                    </label>
-                </div>
+                </label>
+            </div>
 
-                <input type="checkbox" name="terms"> <a href="#">Terms & Conditions</a>
+            <div class="terms-input">
+            <input type="checkbox" name="terms"> <a href="#">Terms & Conditions</a>
+        </div>
+            <button class="submit-button" type="submit">Submit</button>
 
-                <button class="submit-button" type="submit">Submit</button>
 
-
-            </form>
+        </form>
     </div>
 </main>
 </body>
