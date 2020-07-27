@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
-* {
+
+html {
     box-sizing: border-box;
 }
+
+*, *::before, *::after {
+    box-sizing: inherit;
+} 
 
 html, body {
     padding: 0;
@@ -15,18 +20,16 @@ html, body {
     flex-direction: column;
     align-items: center;
 }
-
-.register label,
-.terms-form,
-.referred p {
-    margin: 1em;
+.field-container  {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    justify-content: start;
+    margin: 1em 0;
 }
-.referred div,
-.terms-input {
-    margin-left: 1em;
-}
-.referred label {
-    margin: 0;
+.field-label {
+    margin: .25em 0;
+    padding: 0;
 }
 .input-forms,
 .submit-button {
@@ -36,32 +39,23 @@ html, body {
 
 }
 
-select {
+/* select */
+#browser { 
     -o-appearance: none;
     -ms-appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: .5em;
+    padding: em;
     border-radius: 1em;
-    
+    cursor: pointer;
  }
-
-.input-forms, 
-.referred,
-.terms-form{
-    margin-top: .5em;
-    margin-bottom: 1.5em;
-}
-
 
 textarea {
     resize: none;
 }
 
 .submit-button {
-    display: block;
-    padding: 1em;
     margin-top: 3em;
 }
 

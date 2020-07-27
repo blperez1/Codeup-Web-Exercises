@@ -1,12 +1,18 @@
-* {
+html {
     box-sizing: border-box;
 }
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body, html {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
 }
+
 header {
     background: black;
     width: 100%;

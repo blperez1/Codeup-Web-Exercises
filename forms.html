@@ -11,51 +11,52 @@
     <div class="register">
         <h2 class="form-header">Register With Us</h2>
         <form method="POST" action="https://request-inspector.glitch.me/">
-            <div>
-                <label for="email">Email:</label><br>
+            <div class="field-container">
+                <label class="field-label" for="email">Email:</label>
                 <input class="input-forms" type="email" id="email" placeholder="johnsmith@example.com">
             </div>
 
-            <div>
-                <label for="password">Password:</label>
-                <input class="input-forms" type="password" id="password"><br>
+            <div class="field-container">
+                <label class="field-label" for="password">Password:</label>
+                <input class="input-forms" type="password" id="password">
             </div>
 
-            <div>
-                <label for="bio">Tell us a little about yourself:</label>
+            <div class="field-container">
+                <label class="field-label" for="bio">Tell us a little about yourself:</label>
                 <textarea class="input-forms" name="bio" id="bio" cols="30" rows="10"></textarea>
             </div>
 
-            <div class="referred">
-                <p>How did you hear about us?</p>
+            <div class="field-container">
+                <p class="field-label">How did you hear about us?</p>
 
                 <div>
                 <input id="billboard" type="radio" name="advert" value="billboard"> 
-                <label for="billboard">Billboard</label>
+                <label class="field-label" for="billboard">Billboard</label>
                </div>
                <div>
                 <input id="internet" type="radio" name="advert" value="internet">
-                <label for="internet">Internet</label>
+                <label class="field-label" for="internet">Internet</label>
                </div>
                <div>
                 <input id="radio" type="radio" name="advert" value="radio">
-                <label for="radio">Radio</label>
+                <label class="field-label" for="radio">Radio</label>
             </div>
             <div>
                 <input id="other" type="radio" name="advert" value="other">
-                <label for="other">Other</label>
+                <label class="field-label" for="other">Other</label>
             </div>
             </div>
 
-            <div>
-                <label for="browser"> What web browser are you using?
-                    <select name="browser" id="browser">
+            <div class="field-container">
+                <label class="field-label" for="browser"> What web browser are you using?</label>
+                    <select class="input-forms" name="browser" id="browser">
+                        <option value="select">Select Browser</option>
                         <option value="chrome">Chrome</option>
                         <option value="safari">Safari</option>
                         <option value="firefox">Firefox</option>
                         <option value="explorer">Explorer</option>
                     </select>
-                </label>
+                
             </div>
 
             <div class="terms-input">
