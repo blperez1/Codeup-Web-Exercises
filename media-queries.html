@@ -2,43 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/media-queries.css">
+    <script src="https://kit.fontawesome.com/610310be08.js" crossorigin="anonymous"></script>
     <title>Media Queries</title>
 </head>
 <body>
-    <div id="wrapper">
-    <p class="alert-info">
+    <div class="alert-info hidden-on-desktop">
         <a href="#main">Skip to main content</a>
-    </p>
-    <h1 >Company</h1>
-    <nav class="main-nav">
-        <ul class="nav-list">
-            <li class="nav-item"><a class="nav-links" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-links" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-links" href="#">Work</a></li>
-            <li class="nav-item"><a class="nav-links" href="#">Contact</a></li>
+    </div>
+    <h1>Company</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-
     <div class="header-img">
         <img src="https://via.placeholder.com/900x400?" alt="">
     </div>
-    <main>
-        <section id="main" class="article" >
-            <h2>Main Section</h2>
-            <p>Amet lorem accusantium maxime quis iusto. Sit aliquid quidem at animi commodi, iusto harum, non. Accusantium sequi consectetur deleniti soluta tempora. Maxime maiores blanditiis veritatis vitae amet maiores sapiente in?</p>
-        </section>
-        <section class="article">
-            <h2>Sub-section</h2>
-            <p>Amet optio quidem voluptatum neque esse at saepe, reiciendis quaerat architecto unde minima aspernatur harum cum totam non amet soluta. Ea quae odio harum magni ab vitae tenetur. Itaque numquam!</p>
-        </section>
-    </main>
+    <section id="main" class="main">
+        <h2>Main Section</h2>
+        <p>Amet lorem accusantium maxime quis iusto. Sit aliquid quidem at animi commodi, iusto harum, non. Accusantium sequi consectetur deleniti soluta tempora. Maxime maiores blanditiis veritatis vitae amet maiores sapiente in?</p>
+    </section>
+    <section class="sub-section">
+        <h2>Sub-section</h2>
+        <p>Amet optio quidem voluptatum neque esse at saepe, reiciendis quaerat architecto unde minima aspernatur harum cum totam non amet soluta. Ea quae odio harum magni ab vitae tenetur. Itaque numquam!</p>
+    </section>
     <footer>
         <p>(c) 2017 All rights reserved</p>
         <div id="social-media-links">
-
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-    </div>
 </body>
 </html>
