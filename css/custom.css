@@ -1,0 +1,13 @@
+body {
+    width: 90%;
+  }
+  .jumbotron {
+    background-image: url(../img/pizza.png);
+  }
+  .form-inline {
+    flex-grow: 2;
+  }
+  h1 {
+    background: white;
+    opacity: .7;
+  }
