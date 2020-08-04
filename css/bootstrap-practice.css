@@ -1,0 +1,11 @@
+.lead {
+    text-decoration: underline;
+}
+.card {
+    width: 30em;
+}
+
+.media-photo {
+    width: 120px;
+    height: 30px;
+}
