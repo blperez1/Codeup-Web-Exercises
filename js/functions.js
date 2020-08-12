@@ -50,6 +50,7 @@ var random = Math.floor((Math.random() * 3) + 1);
 function isTwo(num) {
     return num === 2;
 }
+isTwo(random);
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -62,9 +63,7 @@ function isTwo(num) {
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(percentage, bill) {
-    let tip = percentage * bill;
-    let totalBill = tip + +bill;
-    return totalBill.toFixed(2);
+    return bill * (percentage / 100);
 }
 /**
  * TODO:
@@ -92,6 +91,6 @@ alert(`Your total: $${calculateTip(tipPercentage, billTotal)}`)
 
 function applyDiscount(price, discount) {
     let discountAmount = price * discount;
-    let discountPrice = discountAmount + price;
+    let discountPrice = price - discountAmount;
     return discountPrice.toFixed(2);
 }
