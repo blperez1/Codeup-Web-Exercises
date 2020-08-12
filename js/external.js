@@ -23,7 +23,7 @@ let amazon = prompt("Amazon is paying $380/hr. How many hours did you work this 
 let facebook = prompt("Facebook is paying $350/hr. How many hours did you work this week?")
 
 function payCheck() {
-    let pay = (+google * 400) + (+amazon * 380) + (+facebook + 350);
+    let pay = (400 * google) + (380 * amazon) + (350 * facebook);
     alert(`This week's pay: $${pay}`)
 }
 payCheck();
@@ -33,8 +33,9 @@ let classCount = prompt("How many classes are you currently enrolled in?");
 function enroll(classes) {
     if (classes >= 5) {
         alert("Your schedule is full. You cannot enroll into any more classes")
+    } else {
+        alert(`You have room in your schedule to take ${5 - classes} more class/classes`)
     }
-    alert(`You have room in your schedule to take ${5 - +classes} more class/classes`)
 }
 
 enroll(classCount);
@@ -42,7 +43,7 @@ enroll(classCount);
 alert("Let's see if you qualify for this product offer")
 
 function howManyItems() {
-    let numberOfItems = prompt("Non-member must buy a certain number of items for this offer. How many items did you buy?");
+    let numberOfItems = prompt("Non-members must buy a certain number of items for this offer. How many items were purchased?");
     if (numberOfItems >= 2) {
         alert("Product offer applied")
     } else if (numberOfItems < 2) {
