@@ -42,7 +42,7 @@ function analyzeColor(color) {
 
 }
 
-analyzeColor(randomColor);
+// analyzeColor(randomColor);
 
 /**
  * TODO:
@@ -77,8 +77,8 @@ switch (randomColor) {
  */
 
 /* ########################################################################## */
-let userColor = prompt("Choose a color");
-alert(analyzeColor(userColor));
+// let userColor = prompt("Choose a color");
+// alert(analyzeColor(userColor));
 /**
  * TODO:
  * Suppose there's a promotion in Walmart, each customer is given a randomly
@@ -98,7 +98,31 @@ alert(analyzeColor(userColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-
+let lucky = Math.floor(Math.random() * 5);
+function calculateTotal(total, luckyNumber) {
+    switch (luckyNumber) {
+        case 0:
+        case 6:
+            alert(`No discount applied. Your total: $${total}`);
+            break;
+        case 1:
+            alert(`You get 10% off your purchase. Your total: $${total - (total * .10)}`);
+            break;
+        case 2:
+            alert(`You get 25% off your purchase. Your total: $${total - (total * .25)}`);
+            break;
+        case 3:
+            alert(`You get 35%% off your purchase. Your total: $${total - (total * .35)}`);
+            break;
+        case 4:
+            alert(`You get 50% off your purchase. Your total: $${total - (total * .50)}`);
+            break;
+        case 5:
+            alert("You get 100% off your entire purchase. Your total: $0");
+            break;
+    }
+}
+// calculateTotal(10, lucky);
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -107,8 +131,10 @@ alert(analyzeColor(userColor));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-
+let luckyNumber = Math.floor(Math.random() * 6);
+// let userBill = prompt("Enter total bill");
+// alert(`Your Lucky Number: ${luckyNumber}. Your total before possible discount: $${userBill}`)
+// calculateTotal(userBill, luckyNumber)
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -125,3 +151,40 @@ alert(analyzeColor(userColor));
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+let enterNumber = confirm("Would you like to enter a number?");
+
+
+function evenOdd(num) {
+    if (num % 2 === 0) return `${num} is even`;
+
+    return `${num} is odd`;
+}
+
+function addOneHundred(num) {
+    return `${num} + 100 = ${+num + 100}`;
+}
+
+function positiveNegative(num) {
+    if (num > 0) {
+        return `${num} is positive`;
+    }
+
+    return `${num} is negative`;
+}
+
+function enteredAnswer(userAnswer) {
+    if (userAnswer) {
+        let userNumber = prompt("Enter a number");
+        if (Number(userNumber)) {
+            alert(evenOdd(userNumber));
+            alert(addOneHundred(userNumber));
+            alert(positiveNegative(userNumber));
+        } else {
+            alert(`I asked for a number!`)
+        }
+    } else {
+        alert("Jerk")
+    }
+}
+
+enteredAnswer(enterNumber)
