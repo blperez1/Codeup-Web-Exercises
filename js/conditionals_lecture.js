@@ -147,6 +147,7 @@ function checkIfGameIsOver(checkLives) {
     } else {
         alert("Next Level!")
     }
+
 }
 
 checkIfGameIsOver(numberOfLives);
@@ -258,6 +259,11 @@ success ? message = "Operation was successful" : message = "Oops, something went
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 weather === "rainy" ? weatherMessage = "It's raining!" : weatherMessage = "Have a nice day!"
+
+function checkIfGameIsOver2(checkLives) {
+    return checkLives === 0 ? alert("Sorry, game over!") : alert("Next Level!");
+
+}
 
 
 // =============== SWITCH STATEMENT ================
