@@ -42,33 +42,29 @@ function analyzeColor(color) {
 
 }
 
-// analyzeColor(randomColor);
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-switch (randomColor) {
-    case "red":
-        console.log("Straberries are red");
-        break;
-    case "orange":
-        console.log("An orange is an orange");
-        break;
-    case "yellow":
-        console.log("Yellow is the color of sunflowers.");
-        break;
-    case "green":
-        console.log("Green is the color of grass");
-        break;
-    case "blue":
-        console.log("Blue is the color of the sky.");
-        break;
-    default:
-        console.log(`${randomColor} is not my favorite.`);
-        break;
+function analyzeColorSwitch(color) {
+    switch (color.toLowerCase()) {
+        case "red":
+            return "Straberries are red";
+        case "orange":
+            return "An orange is an orange";
+        case "yellow":
+            return "Yellow is the color of sunflowers.";
+        case "green":
+            return "Green is the color of grass";
+        case "blue":
+            return "Blue is the color of the sky.";
+        default:
+            return `${randomColor} is not my favorite.`;
+    }
 }
-
+console.log(analyzeColorSwitch(randomColor))
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -99,30 +95,29 @@ switch (randomColor) {
  * return value.
  */
 let lucky = Math.floor(Math.random() * 5);
-function calculateTotal(total, luckyNumber) {
-    switch (luckyNumber) {
+function calculateTotal(randomNumber, total) {
+    switch (randomNumber) {
         case 0:
         case 6:
-            alert(`No discount applied. Your total: $${total}`);
-            break;
+            return `No discount applied. Your total: $${total}`;
         case 1:
-            alert(`You get 10% off your purchase. Your total: $${total - (total * .10)}`);
-            break;
+            return `You get 10% off your purchase. Your total: $${total - (total * .10)}`;
         case 2:
-            alert(`You get 25% off your purchase. Your total: $${total - (total * .25)}`);
-            break;
+            return `You get 25% off your purchase. Your total: $${total - (total * .25)}`;
         case 3:
-            alert(`You get 35%% off your purchase. Your total: $${total - (total * .35)}`);
-            break;
+            return `You get 35%% off your purchase. Your total: $${total - (total * .35)}`;
         case 4:
-            alert(`You get 50% off your purchase. Your total: $${total - (total * .50)}`);
-            break;
+            return `You get 50% off your purchase. Your total: $${total - (total * .50)}`;
         case 5:
-            alert("You get 100% off your entire purchase. Your total: $0");
-            break;
+            return "You get 100% off your entire purchase. Your total: $0";
+
+
     }
 }
-// calculateTotal(10, lucky);
+console.log(calculateTotal(1, 100));
+console.log(calculateTotal(0, 100))
+console.log(calculateTotal(4, 100))
+console.log(calculateTotal(5, 100))
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -132,9 +127,9 @@ function calculateTotal(total, luckyNumber) {
  */
 // Generate a random number between 0 and 6
 let luckyNumber = Math.floor(Math.random() * 6);
-// let userBill = prompt("Enter total bill");
-// alert(`Your Lucky Number: ${luckyNumber}. Your total before possible discount: $${userBill}`)
-// calculateTotal(userBill, luckyNumber)
+let userBill = prompt("Enter total bill");
+alert(`Your Lucky Number: ${luckyNumber}. Your total before possible discount: $${userBill}`)
+alert(calculateTotal(luckyNumber, userBill));
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -165,9 +160,7 @@ function addOneHundred(num) {
 }
 
 function positiveNegative(num) {
-    if (num > 0) {
-        return `${num} is positive`;
-    }
+    if (num > 0) return `${num} is positive`;
 
     return `${num} is negative`;
 }
@@ -175,13 +168,14 @@ function positiveNegative(num) {
 function enteredAnswer(userAnswer) {
     if (userAnswer) {
         let userNumber = prompt("Enter a number");
-        if (Number(userNumber)) {
-            alert(evenOdd(userNumber));
-            alert(addOneHundred(userNumber));
-            alert(positiveNegative(userNumber));
-        } else {
-            alert(`I asked for a number!`)
+        if (isNaN(userNumber)) {
+            alert(`I asked for a number! I don't want to play anymore.`)
         }
+
+        alert(evenOdd(userNumber));
+        alert(addOneHundred(userNumber));
+        alert(positiveNegative(userNumber));
+
     } else {
         alert("Jerk")
     }
