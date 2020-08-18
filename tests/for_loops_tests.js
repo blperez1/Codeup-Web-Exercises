@@ -70,6 +70,9 @@ describe("returnTenEvenOddMessages", function () {
 
         // TODO: assert that the outputContainsExpectedNumbers function returns true
 
+        expect(outputContainsExpectedNumbers()).toBe(true);
+
+
     });
 });
 
@@ -77,9 +80,13 @@ describe("returnTenEvenOddMessages", function () {
 // Number Sail Tests
 describe("returnNumberSail", function () {
     // TODO: include a test to verify that the function is defined
-
+    it('should be a defined function', function () {
+        expect(returnNumberSail).toBeDefined()
+    })
     // TODO: include a test to verify that the function output is a string
-
+    it('should return a string', function () {
+        expect(typeof returnNumberSail).toBe('String')
+    })
     // TODO: include a test to verify that the function output matches the following value
     var expectedValue = "1\n" +
         "22\n" +
