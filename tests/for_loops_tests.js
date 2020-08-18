@@ -28,25 +28,34 @@ describe("returnMultiplicationTable", function () {
 describe("returnEvenOddMessage", function () {
     it("should be defined", function () {
         // TODO: add an assertion to verify that the function is defined
-
+        expect(returnEvenOddMessages).toBeDefined()
     });
     it("should return a string when passed an integer", function () {
         // TODO: add an assertion verifying that the function returns a string when passed an integer
+        expect(typeof returnEvenOddMessages(2)).toEqual("string");
 
     });
     it("should return the correct message when passed an integer", function () {
         // TODO: add several assertions that verify the correct string output for a given integer input
-
+        expect(returnEvenOddMessages(5)).toEqual("odd");
+        expect(returnEvenOddMessages(10)).toEqual("even");
+        expect(returnEvenOddMessages(9)).toEqual("odd");
+        expect(returnEvenOddMessages(4)).toEqual("even");
     });
 });
 
 describe("returnTenEvenOddMessages", function () {
 
     // TODO: add a test to verify that the function is defined
+    it('should be defined', function () {
+        expect(returnTenEvenOddMessages).toBeDefined()
+    })
 
     it("should return an output that ends with the word 'odd' or 'even'", function () {
         var output = returnTenEvenOddMessages();
         // TODO: add an assertion to verify that the function output ends with either "even" or "odd"
+        expect(output).toContain("odd");
+        expect(output).toContain("even")
 
     });
     it("should return an output with 10 lines", function () {
@@ -69,7 +78,6 @@ describe("returnTenEvenOddMessages", function () {
         }
 
         // TODO: assert that the outputContainsExpectedNumbers function returns true
-
         expect(outputContainsExpectedNumbers()).toBe(true);
 
 
@@ -85,7 +93,7 @@ describe("returnNumberSail", function () {
     })
     // TODO: include a test to verify that the function output is a string
     it('should return a string', function () {
-        expect(typeof returnNumberSail).toBe('String')
+        expect(typeof returnNumberSail()).toBe('string')
     })
     // TODO: include a test to verify that the function output matches the following value
     var expectedValue = "1\n" +
@@ -97,8 +105,38 @@ describe("returnNumberSail", function () {
         "7777777\n" +
         "88888888\n" +
         "999999999";
+    it('should return the correct string output', function () {
+        expect(returnNumberSail()).toEqual(expectedValue)
+    })
 });
 
 
 // Count Down in Fives Tests
 // TODO: include another test suite that verifies that returnCountDownFrom100InFives is defined (first test) and returns the expected output (second test)
+describe('returnCountDownFrom100InFives', function () {
+    it('should be defined', function () {
+        expect(returnCountDownFrom100InFives).toBeDefined()
+    })
+    it('should return the correct string output', function () {
+        expect(returnCountDownFrom100InFives()).toEqual("100\n" +
+            "95\n" +
+            "90\n" +
+            "85\n" +
+            "80\n" +
+            "75\n" +
+            "70\n" +
+            "65\n" +
+            "60\n" +
+            "55\n" +
+            "50\n" +
+            "45\n" +
+            "40\n" +
+            "35\n" +
+            "30\n" +
+            "25\n" +
+            "20\n" +
+            "15\n" +
+            "10\n" +
+            "5");
+    })
+})

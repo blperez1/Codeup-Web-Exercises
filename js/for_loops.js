@@ -12,9 +12,9 @@ function returnMultiplicationTable(num) {
 returnMultiplicationTable(7);
 
 function returnEvenOddMessages(num) {
-    if (num % 2 === 0) {
+    if (num % 2 == 0) {
         return "even"
-    } else if (num % 2 !== 0) {
+    } else if (num % 2 != 0) {
         return "odd"
     }
 }
@@ -35,12 +35,15 @@ function returnTenEvenOddMessages() {
 returnTenEvenOddMessages();
 
 function returnNumberSail() {
+    let j = ''
     for (let i = 1; i < 10; i++) {
-        let j = i.toString()
-        console.log(j.repeat(i));
+        let k = i.toString()
+        j += k.repeat(i);
+        if (i !== 9) j += '\n'
     }
+    return j;
 }
-console.log(returnNumberSail);
+console.log(returnNumberSail());
 
 function returnCountDownFrom100InFives() {
     let output = ""
