@@ -22,7 +22,7 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-    let newPlanetString = planetsArray.join("\n")
+    let newPlanetString = planetsArray.join("<br>")
 
     let planetsList = document.querySelector("#list");
     planetsArray.forEach(function (planet) {
