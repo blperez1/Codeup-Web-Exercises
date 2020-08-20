@@ -59,7 +59,7 @@
     }
 
     function last(arr) {
-        return arr[2];
+        return arr[arr.length - 1];
     }
 
     console.log(first([1, 2, 3, 4, 5]))
