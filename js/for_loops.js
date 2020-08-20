@@ -35,13 +35,14 @@ function returnTenEvenOddMessages() {
 returnTenEvenOddMessages();
 
 function returnNumberSail() {
-    let j = ''
+    let str = ''
     for (let i = 1; i < 10; i++) {
-        let k = i.toString()
-        j += k.repeat(i);
-        if (i !== 9) j += '\n'
+        let j = i.toString()
+        str += j.repeat(i);
+
+        if (i !== 9) str += '\n'
     }
-    return j;
+    return str;
 }
 console.log(returnNumberSail());
 
