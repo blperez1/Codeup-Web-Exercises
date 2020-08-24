@@ -30,7 +30,7 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    console.log(person.sayHello(person.firstName, person.lastName))
+    console.log(person.sayHello())
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -145,12 +145,7 @@
      *      ---
      *      ...
      */
-
-    //  refactored at the bottom to include new pushed objects
-    // books.forEach(function (book, index) {
-    //     let bookInfo = `Book #${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName}\n${book.author.lastName}\n---`
-    //     console.log(bookInfo)
-    // })
+    //refactored at bottom of document to include new book objects
 
     /**
      * Bonus:
@@ -173,7 +168,7 @@
         }
     }
 
-    //refactored solution: creating an empty object and using dot notation
+    //refactored solution: creating an empty book object and using dot notation
     function creatBook2(title, firstName, lastName) {
         let book = {}
         book.title = title;
