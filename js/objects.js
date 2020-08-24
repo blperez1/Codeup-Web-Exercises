@@ -14,8 +14,8 @@
     let person = {
         firstName: "Blossom",
         lastName: "Perez",
-        sayHello: function (first, last) {
-            return `Hello ${first} ${last}!`
+        sayHello: function () {
+            return `Hello ${this.firstName} ${this.lastName}!`
         }
     }
     console.log(person.firstName);
@@ -65,8 +65,9 @@
         let newTotal = (shopper.amount - (discountAmount)).toFixed(2);
         if (shopper.amount < 200) {
             console.log(`${shopper.name}'s total: $${shopper.amount}. You must spend $200 or more to qualify for a discount.`)
+        } else {
+            console.log(`${shopper.name}'s total before discount: $${shopper.amount}. Discount amount: $${discountAmount}. New total: $${newTotal}`)
         }
-        console.log(`${shopper.name}'s total before discount: ${shopper.amount}. Discount amount: $${discountAmount}. New total: $${newTotal}`)
 
     })
 
@@ -144,10 +145,12 @@
      *      ---
      *      ...
      */
-    books.forEach(function (book, index) {
-        let bookInfo = `Book #${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName}\n${book.author.lastName}\n---`
-        console.log(bookInfo)
-    })
+
+    //  refactored at the bottom to include new pushed objects
+    // books.forEach(function (book, index) {
+    //     let bookInfo = `Book #${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName}\n${book.author.lastName}\n---`
+    //     console.log(bookInfo)
+    // })
 
     /**
      * Bonus:
@@ -160,21 +163,35 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, authorFirst, authorLast) {
+    function createBook(title, firstName, lastName) {
         return {
             title: title,
             author: {
-                firstName: authorFirst,
-                lastName: authorLast
+                firstName: firstName,
+                lastName: lastName
             }
         }
     }
 
-    function showBookInfo(newBook) {
-        return books.push(newBook)
+    //refactored solution: creating an empty object and using dot notation
+    function creatBook2(title, firstName, lastName) {
+        let book = {}
+        book.title = title;
+        book.author = {}
+        book.author.firstName = firstName;
+        book.author.LastName = lastName;
+        return book;
     }
 
-    showBookInfo(createBook("Animal Farm", "George", "Orwell"))
-    console.log(books)
+    function showBookInfo(book, index) {
+        console.log(`Book # ${index + 1}`);
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        console.log("---")
+    }
+
+    books.push(createBook("Animal Farm", "George", "Orwell"))
+    books.forEach(showBookInfo);
+
 
 })();
