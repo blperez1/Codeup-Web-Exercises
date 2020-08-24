@@ -23,11 +23,13 @@
      * string, and <li> tags around each planet.
      */
     let newPlanetString = planetsArray.join("<br>")
+    console.log(newPlanetString)
 
-    let planetsList = document.querySelector("#list");
-    planetsArray.forEach(function (planet) {
+    let planetsList = '<ul><li>'
+    planetsList += planetsArray.join("</li><li>")
+    planetsList += '</li></ul>'
 
-    })
-
+    console.log(planetsList);
+    document.getElementById("planets").innerHTML = planetsList;
 
 })();
