@@ -114,7 +114,7 @@ var exampleArray = [
 ];
 
 function arrToCsv(arr) {
-    return arr.join("\n")
+    return arr.join("\\n")
 }
 
 console.log(arrToCsv(exampleArray))
@@ -124,7 +124,7 @@ console.log(arrToCsv(exampleArray))
      contains an array for each line in the input string and each inner array is an array of each line's comma-separated values.
 
     Examples...
-    csvToArr("1,2,3\n4,5,6\n7,8,9") // should return...
+    csvToArr() // should return...
     [
         [1, 2, 3],
         [4, 5, 6],
@@ -132,12 +132,11 @@ console.log(arrToCsv(exampleArray))
     ]
  */
 
-function csvToArr(str) {
-    let arr = str.split("\n");
-
-    return arr;
-
+function csvToArr(csv) {
+    return csv.split('\n')
+        .map(chunks => chunks.split(',').map(Number))
 }
+
 console.log(csvToArr("1,2,3\n4,5,6\n7,8,9"))
 
 let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
