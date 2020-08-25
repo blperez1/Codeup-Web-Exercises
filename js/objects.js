@@ -60,7 +60,7 @@
         }
     ];
 
-    shoppers.forEach(function (shopper) {
+    const shopperDiscount = function() {
         let discountAmount = (shopper.amount * .12).toFixed(2)
         let newTotal = (shopper.amount - (discountAmount)).toFixed(2);
         if (shopper.amount < 200) {
@@ -68,8 +68,9 @@
         } else {
             console.log(`${shopper.name}'s total before discount: $${shopper.amount}. Discount amount: $${discountAmount}. New total: $${newTotal}`)
         }
+    }
 
-    })
+    shoppers.forEach(shopperDiscount)
 
 
     /** TODO:
@@ -158,7 +159,7 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, firstName, lastName) {
+    const createBook = function(title, firstName, lastName) {
         return {
             title: title,
             author: {
@@ -178,11 +179,14 @@
         return book;
     }
 
-    function showBookInfo(book, index) {
-        console.log(`Book # ${index + 1}`);
-        console.log(`Title: ${book.title}`);
-        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
-        console.log("---")
+    const showBookInfo = function(book, index) {
+        let output = "";
+        output += `Book # ${index + 1}\n`
+        output += `Title: ${book.title}\n`
+        output += `Author: ${book.author.firstName} ${book.author.lastName}\n`
+        output += "---"
+
+        console.log(output)
     }
 
     books.push(createBook("Animal Farm", "George", "Orwell"))
