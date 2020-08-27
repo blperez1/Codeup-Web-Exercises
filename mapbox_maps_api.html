@@ -9,8 +9,9 @@
 </head>
 <body>
 	<div id='map' style='width: 400px; height: 300px;'></div>
+	<script src="js/keys.js"></script>
     <script>
-		mapboxgl.accessToken = 'pk.eyJ1IjoiYmxwZXJlejIzIiwiYSI6ImNqc2tqMXAwNTBpYWEzeXBpY3BjZHZoM3kifQ.ZwWifz4tjKTr2J29suoVMg';
+		mapboxgl.accessToken = key;
 		let map = new mapboxgl.Map({
 			container: 'map',
 			style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
