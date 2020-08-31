@@ -11,20 +11,16 @@
 <p class="paragraph">Here is a paragraph</p>
 </div>
 <ul id="list">
-    <li>link</li>
-    <li>link</li>
-    <li>link</li>
+    <li class="codeup">link</li>
+    <li class="codeup">link</li>
+    <li class="codeup">link</li>
     <li>link</li>
 </ul>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            let listContents = $('#list').html();
-            alert(listContents)
-
-            let mainHeader = $('#header-container').html();
-            alert(mainHeader)
+           let listItems = $('.codeup').css('border', '3px solid red' )
         });
     </script>
 </body>
