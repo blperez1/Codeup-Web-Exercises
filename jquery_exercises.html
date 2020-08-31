@@ -20,7 +20,15 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-           $('h1, p, li').css('background-color', 'yellow')
+            $('.main-header').click(function() {
+                $(this).css('background-color', 'yellow');
+            })
+            $('p').dblclick(function() {
+                $(this).css('font-size', '18px');
+            })
+            $('li').mouseover(function() {
+                $(this).css('background-color', 'red');
+            })
         });
     </script>
 </body>
