@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JQuery</title>
 </head>
 <body>
+<div id="header-container">
+<h1 class="main-header">Hello Everyone!</h1>
+<p class="paragraph">Here is a paragraph</p>
+</div>
+<ul id="list">
+    <li>link</li>
+    <li>link</li>
+    <li>link</li>
+    <li>link</li>
+</ul>
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            alert( 'The DOM has finished loading!' );
+            let listContents = $('#list').html();
+            alert(listContents)
+
+            let mainHeader = $('#header-container').html();
+            alert(mainHeader)
         });
     </script>
 </body>
