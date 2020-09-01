@@ -33,46 +33,46 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        let mainHeader = document.querySelector("#main-header");
+        const mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         const changeMainHeader = function(event) {
             mainHeader.innerHTML = "JavaScript is Cool";
         }
         // TODO: Uncomment the next line and get the sub header element by id
-        let subHeader = document.querySelector("#sub-header");
+        const subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
         const changeSubHeader = function(event) {
             subHeader.style.color = "blue";
         }
         // TODO: Uncomment the next line and get all list items
-        let list = document.getElementsByTagName("li")
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
+        const list = document.getElementsByTagName("li")
         const changeListColor = function(event) {
             for(let i = 0; i < list.length; i++) {
                 let dbid = list[i].getAttribute("data-dbid")
                 if(dbid === "1") {
                     list[i].style.color = "blue"
-                }else { 
+                 }else if(dbid % 2 === 0) { 
                     list[i].style.color = "gray"
-                }
+                 }
             }
         }
       
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        let subParagraph = document.querySelector(".sub-paragraph");
+        const subParagraph = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         const changeText = function(event) {
-            subParagraph.innerHTML = "Mission Accomplished!"
+            subParagraph[0].innerText = "Mission Accomplished!"
         }
         
-        let btnOne = document.querySelector("#one")
-        let btnTwo = document.querySelector("#two")
-        let btnThree = document.querySelector("#three")
-        let btnFour = document.querySelector("#four")
+        const btnOne = document.querySelector("#one")
+        const btnTwo = document.querySelector("#two")
+        const btnThree = document.querySelector("#three")
+        const btnFour = document.querySelector("#four")
 
         btnOne.addEventListener('click', changeMainHeader);
         btnTwo.addEventListener('click', changeSubHeader);

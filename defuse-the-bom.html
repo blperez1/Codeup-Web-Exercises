@@ -26,12 +26,25 @@
 
         detonationTimer--;
     }
+
+
     let countDown = setInterval(updateTimer, 1000)
+    function countLine() {
+            let lines = "";
+            for(let i = 10; i > 0; i--) {
+            lines += `This is line #${i} <br>`
+            }
+            return heading.innerHTML = lines;
+        }
+        countLine()
+
+   
+    
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-        clearInterval(countDown);
+       
     }
 
     // Don't modify anything below this line!
