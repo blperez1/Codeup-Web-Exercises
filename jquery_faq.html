@@ -6,56 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1 {
-            text-align: center;
-            margin: 3em;
-        }
-        dl {
-            display: flex;
-            flex-direction: column;
-            margin: auto;
-            width: 70%;
-
-        }
-        .invisable {
-            visibility: hidden;
-        }
-        dd, dt {
-            margin: .5em auto;
-        }
-        dt {
-            cursor: pointer;
-        }
-        dd {
-            width: 70%;
-            line-height: 1.5;
-        }
-        .highlight {
-            border: 1px solid black;
-            background: purple;
-            padding: 0;
-        }
+     html{
+         box-sizing: border-box;
+     }
+     *, *::before, *::after {
+         box-sizing: inherit;
+         padding: 0; 
+         margin: 0;
+     }
+     body {
+         margin: 0;
+         height: 100%;
+         color: white;
+     }
+     .facts-wrapper {
+         background: black;
+         width: 70%;
+         margin: auto;
+         height: 100%;
+     }
+     h1 {
+         padding: 1em;
+     }
+    
+ 
     </style>
 </head>
 
 <body>
-    <h1>10 Fascinating Facts About Your Favorite Horror Movies</h1>
     <div class="facts-wrapper">
+        <h1>10 facts</h1>
         <dl>
-            <dt>1. The Exorcist was the first horror film to be nominated for a Best Picture Oscar.</dt>
+            <h2>The Exorcist was the first horror film to be nominated for a Best Picture Oscar.</dt>
             <dd class="invisable">The horror genre has never gotten much love from the Academy. Though there still seems
                 to be a bias against scary movies during awards season, The Exorcist earned 10 Oscar nominations in
                 1974, including a Best Supporting Actress nod for Linda Blair, who was just 15 years old at the time.
             </dd>
 
-            <dt>2. Robert Englund was not the first choice to play Freddy Krueger.</dt>
+            <h2>Robert Englund was not the first choice to play Freddy Krueger.</dt>
             <dd class="invisable">Wes Craven reportedly planned to have a stuntman play the seemingly immortal
                 youth-hater known as Freddy Krueger, but (wisely) opted to go with an accomplished actor for the role
                 instead. His first choice was the brilliant British character actor David Warner, who you'll no doubt
                 recognize from Time Bandits, Titanic, and various incarnations of Star Trek. Warner had to pass on the
                 project, which opened the door for the truly excellent Robert Englund.</dd>
 
-            <dt>3. Serial killer Ed Gein inspired three major horror movies.</dt>
+            <h2>Serial killer Ed Gein inspired three major horror movies.</dt>
             <dd class="invisable">You’ve likely heard of Ed Gein. His house of horrors made headlines for years after he
                 was sent to a mental hospital for his actions. They were so memorable, in fact, that he inspired some of
                 the most iconic thrillers of all time: Psycho, The Silence of the Lambs, and The Texas Chainsaw
