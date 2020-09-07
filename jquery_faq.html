@@ -138,14 +138,22 @@
     <script>
         (function () {
             "use strict";
-            $(document).ready(function () {
+            $(document).ready(function () { 
                 $('dt').click(function () {
                     $(this).next().toggleClass('invisable')
                     $(this).toggleClass('highlight')
                 })
             })
            
+            $('dt').hover(function() {
+                $(this).toggleClass('highlight')
+            })
         })()
+               
+
+           
+            
+       
     </script>
 </body>
 
