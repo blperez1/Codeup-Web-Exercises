@@ -220,12 +220,33 @@
         (function () {
             "use strict";
             $(document).ready(function () { 
+                $('ul').hide()
+                $('dd').addClass('invisable')
+               
+
                 $('dt').click(function () {
                     $(this).next().toggleClass('invisable')
                     $(this).toggleClass('highlight')
                 })
+                $('#btn').click(function (e) {
+                    e.preventDefault();
+                    $('ul').each(function (index, element) {
+                        $(element).children().last().addClass('red')
+                    });
+                });
+                $('li').click(function() {
+                    $(this).first().css('color', 'blue'); 
+                })
+                $('h3').click(function() {
+                    $(this).next().addClass('bold')
+                    $(this).next().slideToggle(250)
+                })
+                $('#x').click(function() {
+                    $(this).parent().slideUp(250)
+                })
             })
            
+            
         })()
                
 
