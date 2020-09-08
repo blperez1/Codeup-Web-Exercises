@@ -52,12 +52,55 @@
         visibility: hidden;
      }
     
- 
+     .film-details {
+         display: flex;
+         margin-top: 1em;
+         width: 90%;
+         margin: auto;
+     }
+     .list {
+         display: flex;
+         flex-direction: column;
+         padding: 2em;
+     }
+     /* ul {
+         padding: 1em;
+     } */
+     li {
+         padding: .5em;
+     }
+     button {
+        padding: 2em;
+        margin: auto;
+        display: block;
+     }
+     .frames {
+         margin: auto;
+         display: flex;
+         justify-content: space-evenly;
+         padding: 2em;
+     }
+     .image {
+         border: 2px solid white;
+         height: 200px;
+         width: 200px;
+     }
+     img {
+         height: 200px;
+         width: 200px;
+     }
+
     </style>
 </head>
 
 <body>
-    <div class="facts-wrapper">
+    <div class="main-wrapper">
+
+        <div class="frames">
+            <div class="image"><img src="img/pennywise.gif" alt=""></div>
+            <div class="image"><img src="img/jason.gif" alt=""></div>
+            <div class="image"><img src="img/evildead.gif" alt=""></div>
+        </div>
         <h1>10 Fascinating Facts About Your Favorite Horror Movies</h1>
         <dl>
             <dt>The Exorcist was the first horror film to be nominated for a Best Picture Oscar.</dt>
@@ -136,6 +179,39 @@
                 up with the exploding tank as seen in the final film. The dialogue and foreshadowing of the tank were
                 then dropped in as they shot the movie.</dd>
         </dl>
+        <div class="film-details">
+        <div class="list">
+            <h3>The Thing (1982)</h3>
+                <ul>
+                    <li>A research team in Antarctica is hunted by a shape-shifting alien that assumes the appearance of its victims. </li>
+                    <li>Director: John Carpenter</li>
+                    <li>Writers: Bill Lancaster (screenplay), John W. Campbell Jr. (story) </li>
+                </ul>
+                </div>
+        <div class="list">        
+            <h3>Nightmare on Elm Street (1984)</h3>
+                <ul>
+                    <li> The monstrous spirit of a slain child murderer seeks revenge by invading the dreams of teenagers whose parents were responsible for his untimely death. </li>
+                    <li>Director: Wes Craven</li>
+                    <li>Writter: Wes Craven </li>
+                </ul>
+                </div>
+        <div class="list">    
+            <h3>Evil Dead (1981)</h3>
+                <ul>
+                    <li>Five friends travel to a cabin in the woods, where they unknowingly release flesh-possessing demons. </li>
+                    <li>Director: Sam Rami</li>
+                    <li>Writter: Sam Rami</li>
+                </ul>
+                </div> 
+            </div>
+            <button id='btn'>Select Writters</button> <div class="frames">
+                <div class="image"><img src="img/jason2.gif" alt=""></div>
+                <div class="image"><img src="img/exercist.gif" alt=""></div>
+                <div class="image"><img src="img/halloween.gif" alt=""></div>
+            </div>
+
+
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
