@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+    <table id="products" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Categories</th>
+          </tr>
+        </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button class="btn btn-outline-dark">Refresh</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+(function() {
+    "use strict";
+   
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+    $(document).ready(function() {
+        function itemHTMLBuilder({title, quantity, price, categories}) {
+            return `
+                <tr>
+                    <td scope="row">${title}</td>
+                    <td>${quantity}</td>
+                    <td>$${price}</td>
+                    <td>${categories.join(', ')}</td>
+                </tr>
+            `
+        }
+
+        function renderInventory(list) {
+            let tableInfo = '';
+            for(let item of list) {
+                tableInfo += itemHTMLBuilder(item)
+            }
+            $('#insertProducts').html(tableInfo)
+
+        }
+
+
+        $.ajax("data/inventory.json").done(function (inventory) {
+            console.log(inventory)
+            renderInventory(inventory)
+        });
+
+        $('button').click(function(e) {
+            e.preventDefault();
+            location.reload(true)
+        })
+
+    })
+})();
+</script>
+
+</body>
+</html>
