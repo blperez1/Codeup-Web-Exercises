@@ -9,8 +9,16 @@
         .jumbotron {text-align: center;}
         .red {background-color: red;}
         .purple {background-color: mediumpurple;}
+        .orange {background-color: darkorange}
         .hidden {display:none;}
+        .cute {
+            color: blueviolet;
 
+            font-family: cursive;
+        }
+        .underlined {
+            text-decoration: underline;
+        }
     </style>
 
 </head>
@@ -18,10 +26,10 @@
 <main class="container">
     <section class="jumbotron">
         <h1>Fun with jQuery!</h1>
-        <button id="btn1" data-id="1" type="button" class="btn btn-default">#btn1</button>
-        <button id="btn2" data-id="2" type="button" class="btn btn-default">#btn2</button>
-        <button id="btn3" data-id="3" type="button" class="btn btn-default">#btn3</button>
-        <button id="btn4" data-id="4" type="button" class="btn btn-default">#btn4</button>
+        <button id="btn1" type="button" data-id="1" class="btn btn-default">#btn1</button>
+        <button id="btn2" type="button" data-id="2" class="btn btn-default">#btn2</button>
+        <button id="btn3" type="button" data-id="3" class="btn btn-default">#btn3</button>
+        <button id="btn4" type="button" data-id="4" class="btn btn-default">#btn4</button>
     </section>
     <section class="col-xs-3">
         <article id="panel1" class="panel panel-primary">
@@ -30,7 +38,6 @@
             </div>
             <div class="panel-body"> Content
             </div>
-
         </article>
     </section>
     <section class="col-xs-3">
@@ -40,7 +47,6 @@
             </div>
             <div class="panel-body"> Content
             </div>
-
         </article>
     </section>
     <section class="col-xs-3">
@@ -50,7 +56,6 @@
             </div>
             <div class="panel-body"> Content
             </div>
-
         </article>
     </section>
     <section class="col-xs-3">
@@ -60,8 +65,14 @@
             </div>
             <div class="panel-body"> Content
             </div>
-
         </article>
+    </section>
+    <section id="list">
+        <ul>
+            <li>Puppies</li>
+            <li>Bunnies</li>
+            <li>Chickies</li>
+        </ul>
     </section>
 </main>
     <!-- jQuery and bootstrap -->
@@ -72,23 +83,55 @@
 
         $(document).ready(function(){
 
-            $("#btn1").click(function(){
-                $("#panel1").toggleClass("red");
+           console.log("Ready to play!");
+           // var panel1Content = $("#panel1").html(); // getter
+            // console.log(panel1Content);
+            // $("#panel1").html("Here is modified content"); // setter
+
+            var panel1Background = $("#panel1").css("background-color");
+            console.log(panel1Background);
+            var panel1Color = $("#panel1").css("color");
+            console.log(panel1Color);
+
+            $("#btn1").click(function () {
+                $("#panel1").toggleClass("purple");
             });
-            // setter
-            $("#panel4").html('Here is modified content');
+            $("#btn2").click(function () {
+                $("#panel2").toggleClass("red");
+            });
+            $("#btn3").click(function () {
+            //     // if (!$("#panel3").hasClass("hidden")) {
+                    $("#panel3").toggleClass("hidden");
+            //     // } else {
+            //     //     $("#panel3").removeClass("hidden");
+            //     // }
+            });
+            $("#btn4").click(function () {
+                $("#panel4")
+                    .toggleClass("panel-primary")
+                    .toggleClass("panel-warning");
+            });
 
-            // getter 
-            let panel2Content = $("#panel2").html
-            let panel1Content = $("#panel1").css('')
 
-            console.log(panel1Content)
-            $('.btn').each(function() {
-                $(this).dblclick(function () {
-                    $('#panel' + id).toggleClass('hidden')
+            $(".btn").each(function(){
+
+                var id = $(this).attr("data-id");
+                $(this).dblclick(function(){
+                    $("#panel"+id).toggleClass("hidden");
                 })
-            })
 
+            });
+
+            $("ul").children().addClass("cute");
+            $("li").first().addClass("underlined")
+            // document.getElementsByTagName("li")[0] // vanilla equivalent to .first()
+
+            $("li").click(function(){
+                $(this).next().css({
+                    fontSize:
+                        (parseInt($(this).next().css("font-size"))*1.2) + "px"
+                })
+            });
         });
 
     </script>
