@@ -64,16 +64,18 @@
          flex-direction: column;
          padding: 2em;
      }
-     /* ul {
-         padding: 1em;
-     } */
      li {
          padding: .5em;
+         cursor: pointer;
      }
      button {
         padding: 2em;
         margin: auto;
         display: block;
+        cursor: pointer;
+     }
+     h3 {
+         cursor: pointer;
      }
      .frames {
          margin: auto;
@@ -90,13 +92,19 @@
          height: 200px;
          width: 200px;
      }
+     .bold {
+         font-weight: bold;
+    }
+     .red {
+         color: red;
+    }
 
     </style>
 </head>
 
 <body>
     <div class="main-wrapper">
-
+        <div><div id="x">x</div><h2>Woud you like to sign up for our newsletter?</h2></div>
         <div class="frames">
             <div class="image"><img src="img/pennywise.gif" alt=""></div>
             <div class="image"><img src="img/jason.gif" alt=""></div>
@@ -207,7 +215,7 @@
                 </div> 
             </div>
             <button id='btn'>Select Writters</button> <div class="frames">
-                <div class="image"><img src="img/jason2.gif" alt=""></div>
+                <div class="image" class="invisable"><img src="img/jason2.gif" alt=""></div>
                 <div class="image"><img src="img/exercist.gif" alt=""></div>
                 <div class="image"><img src="img/halloween.gif" alt=""></div>
             </div>
