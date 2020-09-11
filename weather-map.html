@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Weather App</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search Locations" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+    <main>
+        <h2 id="location" class="m-3"></h2>
+        <div class="d-flex justify-content-around" id="forecast"></div>
+        <div id="map"></div>
+    </main>
+
+    <script src="js/keys.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+    (function(){ 
+        'use strict'
+        $(document).ready(function() {
+          
+        
+        function renderForecast(locationName, forecast ,index) {
+            const {dt, main, pop, rain, sys, visiblility, weather, wind} = forecast
+            let dateTime = new Date(`${dt}`*1000);
+            // console.log(dateTime)
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            // console.log(options)
+            let formatted = dateTime.toLocaleDateString('en-US', options);
+
+            return `
+                 <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5>${formatted}</h5>
+                        <h5 class="card-title">${weather[0].description}</h5>
+                        <div><img src="http://openweathermap.org/img/wn/${weather[0].icon}.png"></div> 
+                        <h6 class="card-subtitle mb-2 text-muted">${main.temp_max} / ${main.temp_min}</h6>
+                        <p class="card-text">${wind.speed}</p>
+                        <p class="card-text">${main.pressure}</p>
+                    </div>
+                </div>
+            `
+
+        }
+
+        function getFiveDayForeCasts(forecasts) {
+                return [...forecasts.reduce((map, forecast) => {
+                    let day = new Date(forecast.dt_txt).setHours(0, 0, 0, 0)
+                    return map.set(new Date(day).toDateString(), forecast)
+                }, new Map())].map(map => map[1])
+            }
+
+        function renderForecasts(locationName, forecasts){
+        let html = ' '
+        for(let forecast of forecasts) {
+            html += renderForecast(locationName, forecast)
+        }
+        $('#forecast').html(html)
+        $('#location').html(`${locationName} Weather`)
+        }
+  
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                APPID: openWeatherKey,
+                q: "San Antonio",
+                units: "imperial",
+                cnt: 5
+
+            }).done(function (data) {
+                 console.log(data);
+                 console.log(data.list)
+                 renderForecasts(data.city.name, data.list)
+            })
+        })
+    })()
+    </script>
+</body>
+</html>
