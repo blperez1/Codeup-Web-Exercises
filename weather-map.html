@@ -67,7 +67,13 @@
         $('#forecast').html(html)
         $('#location').html(`${locationName} Weather`)
         }
-  
+
+         function mapCoords(lon, lat) {
+            var longitude = `${lon}`
+            var latitude = `${lat}`
+            var lonLat = [longitude, latitude]
+            return lonLat
+        }
 
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: openWeatherKey,
