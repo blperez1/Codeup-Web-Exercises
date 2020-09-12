@@ -85,6 +85,15 @@
                  console.log(data);
                  console.log(data.list)
                  renderForecasts(data.city.name, data.list)
+                 
+                 mapboxgl.accessToken = key;
+                 let mapCoor = mapCoords(data.city.coord.lon, data.city.coord.lat)
+                 let map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11', 
+                    center: mapCoor, 
+                    zoom: 9
+                });
             })
         })
     })()
