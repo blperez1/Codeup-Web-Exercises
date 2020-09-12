@@ -59,13 +59,6 @@
 
         }
 
-        function getFiveDayForeCasts(forecasts) {
-                return [...forecasts.reduce((map, forecast) => {
-                    let day = new Date(forecast.dt_txt).setHours(0, 0, 0, 0)
-                    return map.set(new Date(day).toDateString(), forecast)
-                }, new Map())].map(map => map[1])
-            }
-
         function renderForecasts(locationName, forecasts){
         let html = ' '
         for(let forecast of forecasts) {
