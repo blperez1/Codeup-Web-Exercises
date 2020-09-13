@@ -33,8 +33,29 @@
     (function(){ 
         'use strict'
         $(document).ready(function() {
-          
         
+            mapboxgl.accessToken = key;
+            let map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-98.4936, 29.4241],
+                zoom: 9
+            });
+
+                //Adds Navigation controls and disables scroll to zoom
+            map.addControl(new mapboxgl.NavigationControl());
+                    map.scrollZoom.disable();
+
+            let marker = new mapboxgl.Marker({draggable: true})
+                .setLngLat([-98.4916, 29.4241])
+                .addTo(map);
+
+             let geocoder = new MapboxGeocoder({
+                    accessToken: mapboxgl.accessToken,
+                    mapboxgl: mapboxgl
+            });
+            
+        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
     // function onDragEnd() {
     //     let lngLat = marker.getLngLat();
     //     geocode([lngLat.lng, lngLat.lat]);
@@ -93,14 +114,6 @@
                  console.log(data.list)
                  renderForecasts(data.city.name, data.list)
                     // renderGeocoderInput(map, key)
-                 mapboxgl.accessToken = key;
-                 let mapCoor = mapCoords(data.city.coord.lon, data.city.coord.lat)
-                 let map = new mapboxgl.Map({
-                    container: 'map',
-                    style: 'mapbox://styles/mapbox/streets-v11', 
-                    center: mapCoor, 
-                    zoom: 9
-                });
                 })
             }
             updateForecast(-98.4936, 29.4241)
