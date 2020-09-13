@@ -80,17 +80,19 @@
             return lonLat
         }
 
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-                APPID: openWeatherKey,
-                q: "Houston, US",
-                units: "imperial",
-                cnt: 5
+        function updateForecast(lon, lat) {
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                    APPID: openWeatherKey,
+                    lat: lat,
+                    lon: lon,
+                    units: "imperial",
+                    cnt: 5
 
             }).done(function (data) {
                  console.log(data);
                  console.log(data.list)
                  renderForecasts(data.city.name, data.list)
-                 
+                    // renderGeocoderInput(map, key)
                  mapboxgl.accessToken = key;
                  let mapCoor = mapCoords(data.city.coord.lon, data.city.coord.lat)
                  let map = new mapboxgl.Map({
@@ -99,7 +101,9 @@
                     center: mapCoor, 
                     zoom: 9
                 });
-            })
+                })
+            }
+            updateForecast(-98.4936, 29.4241)
         })
     })()
     </script>
