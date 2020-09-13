@@ -35,18 +35,24 @@
         $(document).ready(function() {
           
         
-        function renderForecast(locationName, forecast ,index) {
-            const {dt, main, pop, rain, sys, visiblility, weather, wind} = forecast
-            let dateTime = new Date(`${dt}`*1000);
-            // console.log(dateTime)
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            // console.log(options)
-            let formatted = dateTime.toLocaleDateString('en-US', options);
+    // function onDragEnd() {
+    //     let lngLat = marker.getLngLat();
+    //     geocode([lngLat.lng, lngLat.lat]);
+    // }
 
+    // marker.on('dragend', onDragEnd);
+
+        function convertDay(dt) {
+            let dateTime = new Date(dt).toDateString();
+            return dateTime
+        }
+
+        function renderForecast(locationName, forecast ,index) {
+            const {dt, dt_txt, main, pop, rain, sys, visiblility, weather, wind} = forecast
             return `
                  <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5>${formatted}</h5>
+                        <h5 class="card-title">${convertDay(dt_txt)}</h5>
                         <h5 class="card-title">${weather[0].description}</h5>
                         <div><img src="http://openweathermap.org/img/wn/${weather[0].icon}.png"></div> 
                         <h6 class="card-subtitle mb-2 text-muted">${main.temp_max} / ${main.temp_min}</h6>
