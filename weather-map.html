@@ -96,8 +96,8 @@
 
         function renderForecasts(locationName, forecasts){
             let html = ' '
-            for(let forecast of forecasts) {
-                html += renderForecast(locationName, forecast)
+            for(let i = 0; i < forecasts.length; i += 8) {
+                html += renderForecast(locationName, forecasts[i])
             }
             $('#forecast').html(html)
             $('#location').html(`${locationName} Weather`)
@@ -110,7 +110,7 @@
                     lat: lngLat.lat || lat,
                     lon: lngLat.lng || lon,
                     units: "imperial",
-                    cnt: 5
+                    // cnt: 5
 
                 }).done(function (data) {
                     console.log(data);
