@@ -43,7 +43,7 @@ users.push({
   email,
   languages
 });
-
+// console.log(users)
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
@@ -65,12 +65,12 @@ const {name, email, languages} = users
 });
 
 // TODO: Use `let` for the following variable
-var list = '<ul>';
+let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop
 for(let developer of developers) {
 
   // TODO: rewrite the assignment below to use template strings
-  list +=  `<li>${developer}</li>`;
+  list += `<li>${developer}</li>`;
 }
-list += '</ul>';
+  list += '</ul>'
