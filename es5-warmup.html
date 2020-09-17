@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <main>
+            <div>bob</div>
+            <div>STEVE</div>
+            <div>sAlLY</div>
+        </main>
+
+<script>
+// 1. Write the needed JavaScript (without jQuery) to produce the following output in the browser:
+// ​
+// 	```
+// 	Bob Smith
+// 	Steve Smith
+// 	Sally Smith
+    (function() {
+        const name = {lName: "smith"};
+        const upperCase = (name) => name[0].toUpperCase().concat(name.slice(1).toLowerCase());
+    
+        document.querySelectorAll('div').forEach((div) => {
+            return div.innerText = `${upperCase(div.textContent)} ${upperCase(name.lName)}`
+        })
+        
+    })()
+
+// If you have enough time, try refactor your code to express a solution as simply as possible
+</script>
+</body>
+</html>
