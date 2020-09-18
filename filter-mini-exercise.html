@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Mini Exercise</title>
+</head>
+<body>
+​
+<script>
+    "use strict";
+​
+    // TODO: Given the following array, complete the todos...
+​
+    const dogs = [
+        {
+            name: 'bubbles',
+            age: 10,
+            isTrained: false
+        },
+        {
+            name: 'lexie',
+            age: 3,
+            isTrained: true
+        },
+        {
+            name: 'doggy',
+            age: 5,
+            isTrained: false
+        }
+    ];
+​
+    // TODO: using filter, create a new array containing only dogs younger than 10 years old
+​   const young = dogs.filter(({age}) => age < 10)
+    // TODO: using filter, create a new array containing only dogs named 'lexie'
+​   const name = dogs.filter(({name} )=> name === "lexie")
+    // TODO: using filter, create a new array containing only dogs that are trained and younger than 10
+​   const isTrained = dogs.filter(({age, isTrained}) => age < 10 && isTrained)
+​
+</script>
+​
+</body>
+</html>
