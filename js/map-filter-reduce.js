@@ -56,7 +56,7 @@ function instructorNames() {
     return `Your instructors are: ${instructors}`
 }
 
-instructorNames()
+console.log(instructorNames())
 
-let codeLanguages = users.reduce((acc, {languages}) => acc + languages, "")
+let codeLanguages = users.reduce((acc, user) => acc + user.languages, "")
 console.log(codeLanguages)
