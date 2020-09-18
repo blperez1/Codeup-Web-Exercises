@@ -41,22 +41,31 @@ let lang = users.filter(({languages}) => languages.length >= 3)
 let _email = users.map(({email}) => email)
 
 function averageYears() {
-    let sum = users.reduce((acc, {yearsOfExperience}) => acc + yearsOfExperience, 0)
+    const sum = users.reduce((acc, {yearsOfExperience}) => acc + yearsOfExperience, 0)
     return sum / users.length
 }
 
 averageYears()
 
-let longestEmail = users.reduce((longest, {email}) => {
+const longestEmail = users.reduce((longest, {email}) => {
    return longest.length < email.length ? email : longest 
 }, "")
 
-function instructorNames() {
-    let instructors = users.reduce((acc, {name}) => `${acc + name}, `, "")
-    return `Your instructors are: ${instructors}`
-}
+const instructorNames = users.reduce((acc, {name}) => `${acc + name}, ` , "").slice(0, -2)
+console.log(instructorNames)
 
-console.log(instructorNames())
 
-let codeLanguages = users.reduce((acc, user) => acc + user.languages, "")
+
+const codeLanguages = users.reduce((acc, {languages}) => {
+    languages.forEach(element => {
+        acc.push(element)
+    })
+    return acc
+}, [])
 console.log(codeLanguages)
+
+const unique = codeLanguages.filter((c, index) => {
+    return codeLanguages.indexOf(c) !== index
+})
+
+console.log(unique)
