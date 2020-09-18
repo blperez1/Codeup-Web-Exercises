@@ -62,10 +62,9 @@ const codeLanguages = users.reduce((acc, {languages}) => {
     })
     return acc
 }, [])
-console.log(codeLanguages)
 
-const unique = codeLanguages.filter((c, index) => {
-    return codeLanguages.indexOf(c) !== index
+const unique = codeLanguages.filter((language, index) => {
+    return codeLanguages.indexOf(language) === index
 })
 
 console.log(unique)
