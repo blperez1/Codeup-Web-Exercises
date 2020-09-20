@@ -99,6 +99,10 @@ console.log(makeSuperPet(pets))
 const petNameLength = pets.filter(({breed}) => breed === 'Pug').reduce((acc, {name}) => acc.concat(name.length), [])
 
 console.log(petNameLength)
+
+const getFemaleFamilyMembers = family.filter(({gender}) => gender === 'female').reduce((acc, {name}) => acc.concat(name), [])
+
+console.log(getFemaleFamilyMembers)
 let input = ['Sally', 'Fred', 'Steve']
 const fullName = arr => arr.reduce((acc, element) => {
     acc.push(`${element} Smith`)
