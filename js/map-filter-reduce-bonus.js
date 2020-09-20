@@ -106,11 +106,9 @@ console.log(getFemaleFamilyMembers)
 
 const petString = pets.reduce((acc, {name, age, breed}) => acc.concat(`${name}-${age}-${breed}-`),'').slice(0, -1)
 console.log(petString)
+
 let input = ['Sally', 'Fred', 'Steve']
-const fullName = arr => arr.reduce((acc, element) => {
-    acc.push(`${element} Smith`)
-    return acc
-}, [])
+const fullName = arr => arr.reduce((acc, element) => acc.concat(`${element} Smith`), [])
 
 console.log(fullName(input))
 
