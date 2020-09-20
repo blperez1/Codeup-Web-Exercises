@@ -82,10 +82,10 @@ const averageAge = (arr) => {
 
 console.log(averageAge(customers))
 
-const makeSuperPet = (arr) => {
-    const name = arr.reduce((acc, {name}) => acc + name, "")
-    const breed = arr.reduce((acc, {breed}) => acc + breed, "")
-    const age = averageAge(arr)
+const makeSuperPet = (obj) => {
+    const name = obj.reduce((acc, {name}) => acc + name, "")
+    const breed = obj.reduce((acc, {breed}) => acc + breed[0], "")
+    const age = obj.reduce((acc, {age}) => acc + age, 0)
 
     return {
         name,
