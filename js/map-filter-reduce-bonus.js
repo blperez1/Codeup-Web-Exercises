@@ -63,9 +63,9 @@ const family = [
 ];
 
 
+
 const firstLetter = fruits.reduce((acc, element) => {
-    acc.push(element[0])
-    return acc
+    return acc.concat(element[0])
 }, [])
 console.log(firstLetter)
 
