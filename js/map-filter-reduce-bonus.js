@@ -103,6 +103,9 @@ console.log(petNameLength)
 const getFemaleFamilyMembers = family.filter(({gender}) => gender === 'female').reduce((acc, {name}) => acc.concat(name), [])
 
 console.log(getFemaleFamilyMembers)
+
+const petString = pets.reduce((acc, {name, age, breed}) => acc.concat(`${name}-${age}-${breed}-`),'').slice(0, -1)
+console.log(petString)
 let input = ['Sally', 'Fred', 'Steve']
 const fullName = arr => arr.reduce((acc, element) => {
     acc.push(`${element} Smith`)
