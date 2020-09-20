@@ -72,11 +72,7 @@ console.log(firstLetter)
 const users = customers.map(({name, age}) => ({name, age}))
 console.log(users)
 
-const civilServent = customers.filter(({name, age, occupation}) => {
-    if(occupation === "Teacher" || occupation === "Police Officer") {
-        return {name, age}
-    }
-})
+const civilServent = customers.filter(({occupation}) => occupation === "Teacher" || occupation === "Police Officer")
 console.log(civilServent)
 
 const averageAge = (arr) => {
