@@ -127,6 +127,10 @@ const firstLetterString = arr => arr.reduce((acc, element) => acc + element[0], 
 
 console.log(firstLetterString(input))
 
+const truthyValues = arr => arr.filter(element => element === true)
+
+const arrayOfValues = obj => obj.keys(dataObject)
+console.log(family)
 
 
 
