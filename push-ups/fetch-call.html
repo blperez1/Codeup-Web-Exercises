@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let starfetch = fetch('https://swapi.dev/api/people/19/')
+                .then(result => result.json())
+                .then(data => {
+                    console.log(data)
+                    return "starwar finished"
+                })
+            let githubfetch = fetch('https://api.github.com/users')
+                .then(result => result.json())
+                .then(result => {
+                    result.forEach(user => console.log(user))
+                    return "gitHub Finished"
+                })
+                .catch(error => console.log(error))
+
+            Promise.all([starfetch, githubfetch])
+                .then(data => {
+                    console.log("both are complete")
+                    console.log(data)
+                })
+    </script>
+</body>
+</html>
