@@ -55,10 +55,17 @@
         }
 
 
-        $.ajax("data/inventory.json").done(function (inventory) {
-            console.log(inventory)
-            renderInventory(inventory)
-        });
+        // $.ajax("data/inventory.json").done(function (inventory) {
+        //     console.log(inventory)
+        //     renderInventory(inventory)
+        // });
+
+        // fetch equivalent 
+        fetch('data/inventory.json').then(res => res.json())
+            .then(inventory => {
+                console.log(inventory)
+                renderInventory(inventory)
+            })
 
         $('button').click(function(e) {
             e.preventDefault();
